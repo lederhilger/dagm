@@ -1,0 +1,4 @@
+{
+    "name": "dagm",
+    "description": "An implementation of arithmetric-geometric algorithms in D"
+}
