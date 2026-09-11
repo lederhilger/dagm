@@ -1,4 +1,12 @@
 {
     "name": "dagm",
-    "description": "An implementation of arithmetric-geometric algorithms in D"
+    "description": "An implementation of arithmetric-geometric algorithms in D",
+    "authors": ["Simon Lederhilger"],
+    "targetType": "executable",
+    "sourcePaths": ["source"],
+    "buildTypes": {
+	"release": {
+	    "buildOptions": ["releaseMode"]
+	}
+    }
 }
