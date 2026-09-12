@@ -2,45 +2,45 @@ module vectrix;
 
 struct Vectrix
 {
-	double x = 0.0;
-	double y = 0.0;
-	double z = 0.0;
+	double r = 0.0;
+	double g = 0.0;
+	double b = 0.0;
 
-	this(double xValue, double yValue, double zValue) pure nothrow @nogc
+	this(double red, double green, double blue) pure nothrow @nogc
 	{
-		x = xValue;
-		y = yValue;
-		z = zValue;
+		r = red;
+		g = green;
+		b = blue;
 	}
 }
 
 Vectrix add(Vectrix a, Vectrix b) pure nothrow @nogc
 {
-	return Vectrix(a.x + b.x, a.y + b.y, a.z + b.z);
+	return Vectrix(a.r + b.r, a.g + b.g, a.b + b.b);
 }
 
 Vectrix sub(Vectrix a, Vectrix b) pure nothrow @nogc
 {
-	return Vectrix(a.x - b.x, a.y - b.y, a.z - b.z);
+	return Vectrix(a.r - b.r, a.g - b.g, a.b - b.b);
 }
 
 Vectrix scale(Vectrix a, double value) pure nothrow @nogc
 {
-	return Vectrix(a.x * value, a.y * value, a.z * value);
+	return Vectrix(a.r * value, a.g * value, a.b * value);
 }
 
 Vectrix wedge(Vectrix a, Vectrix b) pure nothrow @nogc
 {
 	return Vectrix(
-	       a.y * b.z - a.z * b.y,
-	       a.z * b.x - a.x * b.z,
-	       a.x * b.y - a.y * b.x
+	       a.g * b.b - a.b * b.g,
+	       a.b * b.r - a.r * b.b,
+	       a.r * b.g - a.g * b.r
 	);
 }
 
 double dot(Vectrix a, Vectrix b) pure nothrow @nogc
 {
-	return a.x * b.x + a.y * b.y + a.z * b.z;
+	return a.r * b.r + a.g * b.g + a.b * b.b;
 }
 
 double normSquared(Vectrix value) pure nothrow @nogc
@@ -55,5 +55,5 @@ double norm(Vectrix value) pure nothrow @nogc
 
 bool finite(Vectrix value) pure nothrow @nogc
 {
-	return isFinite(value.x) && isFinite(value.y) && isFinite(value.z);
+	return isFinite(value.r) && isFinite(value.g) && isFinite(value.b);
 }
