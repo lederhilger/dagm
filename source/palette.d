@@ -44,6 +44,6 @@ in (x.length == spectrum.length)
 Vectrix[] palette(const(double)[] x, Vectrix α, Vectrix β, Vectrix γ, Vectrix δ, ref const Ellipticity ellipticity) @safe
 {
 	auto spectrum = new Vectrix[x.length];
-	palette(x, α, β, γ, δ, ellipticity);
+	palette(x, α, β, γ, δ, ellipticity, spectrum);
 	return spectrum;
 }
