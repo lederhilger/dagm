@@ -1,12 +1,14 @@
 module vectrix;
 
+import std.math : sqrt, isFinite;
+
 struct Vectrix
 {
 	double r = 0.0;
 	double g = 0.0;
 	double b = 0.0;
 
-	this(double red, double green, double blue) pure nothrow @nogc
+	this(double red, double green, double blue) @safe @nogc pure nothrow
 	{
 		r = red;
 		g = green;
