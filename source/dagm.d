@@ -26,7 +26,7 @@ double[] linspace(double start, double end, size_t N) @safe pure
 
 void main()
 {
-	const(double)[64] x = linspace(0, 1, 64);
+	const(double)[] x = linspace(0, 1, 64);
 	auto α = Vectrix(.5, .5, .5);
 	auto β = Vectrix(.5, .5, .5);
 	auto γ = Vectrix(1, 1, 1);
