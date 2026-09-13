@@ -7,7 +7,7 @@ import agm : AGM;
 import ellipticity : Ellipticity;
 import jacobi : cd;
 import palette : palette;
-import vectrix : Vectrix;
+import vectrix : Vectrix, add;
 
 double[] linspace(double start, double end, size_t N) @safe pure
 {
