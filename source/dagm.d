@@ -19,7 +19,7 @@ double[] linspace(double start, double end, size_t N) @safe pure
 	immutable double space = (end - start) / (N - 1);
 	foreach (i; 0 .. N)
 	{
-		grid[i] = start + i * end;
+		grid[i] = start + i * space;
 	}
 	return grid;
 }
