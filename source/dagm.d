@@ -1,7 +1,8 @@
 module dagm;
 
 import std.stdio : writef;
-import std.math : sqrt;
+import std.math : sqrt, PI;
+import std.conv : to;
 import agm : AGM;
 import ellipticity : Ellipticity;
 import jacobi : cd;
@@ -24,15 +25,26 @@ double[] linspace(double start, double end, size_t N) @safe pure
 	return grid;
 }
 
-void main()
+void main(string[] args)
 {
+	immutable double k = args.length > 1 ? to!double(args[1]) : sqrt(.5);
 	const(double)[] x = linspace(0, 1, 64);
 	auto α = Vectrix(.5, .5, .5);
 	auto β = Vectrix(.5, .5, .5);
 	auto γ = Vectrix(1, 1, 1);
 	auto δ = Vectrix(0, .1, .2);
-	auto ellipticity = Ellipticity(sqrt(.5));
-	auto colors = palette(x, α, β, γ, δ, ellipticity);
+	Vectrix[] colors;
+
+	if (k == 1.0)
+	{
+		colors = new Vectrix[x.length];
+		colors[] = add(α, β);
+	}
+	else
+	{
+		auto ellipticity = Ellipticity(k);
+		colors = palette(x, α, β, γ, δ, ellipticity);
+	}
 	foreach (color; colors)
 	{
 		immutable ubyte r = cast(ubyte)(color.r * 255 + .5);
