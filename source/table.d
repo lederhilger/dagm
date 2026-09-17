@@ -10,7 +10,7 @@ import linspace : linspace;
 void table(string[] args) @safe
 {
 	immutable double k = args.length > 1 ? to!double(args[1]) : sqrt(.5);
-	immutable size_t N = args.length > 2 ? to!double(args[2]) : 64;
+	immutable size_t N = args.length > 2 ? to!size_t(args[2]) : 64;
 	auto ellipticity = Ellipticity(k);
 
 	const(double)[] x = linspace(-1.0, 1.0, N);
