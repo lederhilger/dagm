@@ -7,7 +7,7 @@ import ellipticity : Ellipticity;
 import jacobi : cd;
 import linspace : linspace;
 
-void table(string args[]) @safe
+void table(string[] args) @safe
 {
 	immutable double k = args.length > 1 ? to!double(args[1]) : sqrt(.5);
 	immutable size_t N = args.length > 2 ? to!double(args[2]) : 64;
@@ -18,7 +18,7 @@ void table(string args[]) @safe
 	period[] = 4 * ellipticity.K * x[];
 
 	auto codinus = cd(ellipticity, period);
-	wrtiefln("#Curve 0, %d points", N);
+	writefln("#Curve 0, %d points", N);
 	writeln("#x y type");
 	foreach (i; 0 .. N)
 	{

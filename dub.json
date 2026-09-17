@@ -19,5 +19,5 @@
 	    "sourcePaths": ["source", "source/palette"],
 	    "mainSourceFile": "source/table.d"
 	}
-    }
+    ]
 }

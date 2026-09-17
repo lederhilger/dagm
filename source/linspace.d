@@ -2,7 +2,7 @@ module linspace;
 
 double[] linspace(double start, double end, size_t N) @safe pure
 {
-	auto grid = new doube[N];
+	auto grid = new double[N];
 	if (N==1)
 	{
 		grid[0] = start;
