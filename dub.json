@@ -11,12 +11,12 @@
     "configurations": [
 	{
 	    "name": "palette",
-	    "sourcePaths": ["source", "source/palette"],
+	    "sourcePaths": ["source"],
 	    "mainSourceFile": "source/dagm.d"
 	},
 	{
 	    "name": "table",
-	    "sourcePaths": ["source", "source/palette"],
+	    "sourcePaths": ["source"],
 	    "mainSourceFile": "source/table.d"
 	}
     ]
