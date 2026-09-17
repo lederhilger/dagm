@@ -3,10 +3,21 @@
     "description": "An implementation of arithmetric-geometric algorithms in D",
     "authors": ["Simon Lederhilger"],
     "targetType": "executable",
-    "sourcePaths": ["source"],
     "buildTypes": {
 	"release": {
-	    "buildOptions": ["releaseMode"]
+	    "buildOptions": ["releaseMode", "optimize", "inline"]
+	}
+    },
+    "configurations": [
+	{
+	    "name": "palette",
+	    "sourcePaths": ["source", "source/palette"],
+	    "mainSourceFile": "source/dagm.d"
+	},
+	{
+	    "name": "table",
+	    "sourcePaths": ["source", "source/palette"],
+	    "mainSourceFile": "source/table.d"
 	}
     }
 }
