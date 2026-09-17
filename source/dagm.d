@@ -9,31 +9,37 @@ import jacobi : cd;
 import palette : palette;
 import vectrix : Vectrix, add;
 import std.algorithm.comparison : clamp;
-
-double[] linspace(double start, double end, size_t N) @safe pure
-{
-	auto grid = new double[N];
-	if (N == 1)
-	{
-		grid[0] = start;
-		return grid;
-	}
-	immutable double space = (end - start) / (N - 1);
-	foreach (i; 0 .. N)
-	{
-		grid[i] = start + i * space;
-	}
-	return grid;
-}
+import linspace : linspace;
 
 void main(string[] args)
 {
 	immutable double k = args.length > 1 ? to!double(args[1]) : sqrt(.5);
 	const(double)[] x = linspace(0, 1, 64);
-	auto α = Vectrix(1.0, 0.213, 0.325);
-	auto β = Vectrix(1.0, 0.379, 0.31);
-	auto γ = Vectrix(0.09, 0.305, 0.574);
-	auto δ = Vectrix(0.618, 0.67, 0.516);
+
+	auto α = Vectrix(
+	     0.0,
+	     0.179,
+	     1.0
+	);
+
+	auto β = Vectrix(
+	     0.703,
+	     1.0,
+	     0.963
+	);
+
+	auto γ = Vectrix(
+	     0.098,
+	     0.092,
+	     0.167
+	);
+
+	auto δ = Vectrix(
+	     0.768,
+	     0.734,
+	     0.478
+	);
+
 	Vectrix[] colors;
 
 	if (k == 1.0)
